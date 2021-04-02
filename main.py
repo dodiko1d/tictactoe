@@ -16,5 +16,6 @@ while True:
     elif event == 'button_1' and not counter % 2:
         window['button_1'].update(button_color=('#212121', '#ffffff'))
         counter += 1
+    print('Hello, World')
 window.close()
 
