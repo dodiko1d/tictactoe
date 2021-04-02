@@ -1,17 +1,13 @@
 import PySimpleGUI as sg
-# This is a sample Python script.
+layout_main = []
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+window = sg.Window('Крестики-нолики', layout=layout_main)
 
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+        break
+    print('You entered ', values[0])
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+window.close()
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
