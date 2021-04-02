@@ -1,16 +1,21 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from layouts.main import layout_main
+import PySimpleGUI as sg
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+window = sg.Window('Крестики-нолики', layout=layout_main)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+counter = 1
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+        break
+    if event == 'button_1' and counter % 2:
+        window['button_1'].update(button_color=('#ffffff', '#212121'))
+        counter += 1
+    elif event == 'button_1' and not counter % 2:
+        window['button_1'].update(button_color=('#212121', '#ffffff'))
+        counter += 1
+    print('Hello, World')
+window.close()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
