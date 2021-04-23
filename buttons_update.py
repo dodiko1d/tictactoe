@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 from board import win
 
+
 def buttons_update(window: sg.Window,event: str,stats: dict):
     for numb in range(9):
         button_row=numb//3
@@ -16,6 +17,6 @@ def buttons_update(window: sg.Window,event: str,stats: dict):
             stats['used_buttons'] |= {f'button_{numb}'}
             winner = win(stats['field'])
             if winner == 'D' and stats['counter'] == 9:
-                print('Draw.')
+                window['winner'].update('Draw', visible=True)
             elif winner != 'D':
-                print(f'Winner is {winner}.')
+                window['winner'].update(f'Winner is {winner}', visible=True)
