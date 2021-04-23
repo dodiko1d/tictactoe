@@ -17,5 +17,5 @@ def buttons_update(window: sg.Window,event: str,stats: dict):
             winner = win(stats['field'])
             if winner == 'D' and stats['counter'] == 9:
                 print('Draw.')
-            else:
+            elif winner != 'D':
                 print(f'Winner is {winner}.')
