@@ -1,4 +1,4 @@
-def WIN
+def win:
     if board[0][0]==board[1][0]==board[2][0]!='.':
         return board[0][0]
     if board[0][1]==board[1][1]==board[2][1]!='.':
