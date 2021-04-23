@@ -18,5 +18,17 @@ def buttons_update(window: sg.Window,event: str,stats: dict):
             winner = win(stats['field'])
             if winner == 'D' and stats['counter'] == 9:
                 window['winner'].update('Draw', visible=True)
+                window['restart'].update(visible=True)
             elif winner != 'D':
                 window['winner'].update(f'Winner is {winner}', visible=True)
+                window['restart'].update(visible=True)
+    if event == 'restart':
+        for numb in range(9):
+            window[f'button_{numb}'].update('', button_color=('#212121', '#ffffff'))
+        window['winner'].update('', visible=False)
+        window['restart'].update(visible=False)
+        stats['counter'] = 0
+        stats['used_buttons'] = set()
+        stats['field'] = [['.', '.', '.'], ['.', '.', '.'], ['.', '.', '.']]
+
+
