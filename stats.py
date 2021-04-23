@@ -1,4 +1,5 @@
 stats = {
     'counter': 0,
-    'used_buttons': set()
+    'used_buttons': set(),
+    'filed':[['.','.','.']['.','.','.']['.','.','.']]
 }
